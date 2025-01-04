@@ -36,27 +36,7 @@ def send_tap_request(available_taps, count, token):
     return response.json()
 
 # Function to send the /wallet/claim request
-def send_claim_request(token):
-    url = 'https://api-gw.geagle.online/wallet/claim'
-    headers = {
-        'accept': 'application/json, text/plain, */*',
-        'accept-language': 'en-US,en;q=0.9',
-        'authorization': f'Bearer {token}',
-        'content-length': '0',
-        'origin': 'https://telegram.geagle.online',
-        'priority': 'u=1, i',
-        'referer': 'https://telegram.geagle.online/',
-        'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Windows"',
-        'sec-fetch-dest': 'empty',
-        'sec-fetch-mode': 'cors',
-        'sec-fetch-site': 'same-site',
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36'
-    }
 
-    response = requests.post(url, headers=headers)
-    return response.json()
 
 # Read the Bearer tokens from data.txt
 with open('data.txt', 'r') as file:
