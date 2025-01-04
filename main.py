@@ -2,6 +2,42 @@ import requests
 import time
 import uuid
 
+MAGENTA = "\033[35m"
+CYAN = "\033[36m"
+YELLOW = "\033[33m"
+GREEN = "\033[32m"
+RED = "\033[31m"
+BOLD = "\033[1m"
+UNDERLINE = "\033[4m"
+RESET = "\033[0m"
+
+ascii_banner = f"""
+{CYAN}    
+   _____           _           ______                _       
+  / ____|         | |         |  ____|              | |      
+| |     ___  __ | | ___  ___ | |__ ___  _ __   __ _| |_ ___ 
+| |    / _ \/ _` | |/ _ \/ _ \|  __/ _ \| '_ \ / _` | __/ _ \
+| |___|  __/ (_| | |  __/  __/| | | (_) | | | | (_| | ||  __/
+  \_____\___|\__, |_|\___|\___||_|  \___/|_| |_|\__,_|\__\___|
+              __/ |                                          
+             |___/                                                          {RESET}
+"""
+
+tagline = f"""
+{YELLOW} +-+-+-+-+-+-+ +-+-+-+-+ +-+-+ +-+-+-+-+ +-+-+-+-+-+-+-+-+
+ |A|n|y|o|n|e| |w|a|n|t| |d|o| |s|o|m|e| |d|o|n|a|t|i|o|n|
+ +-+-+-+-+-+-+ +-+-+-+-+ +-+-+ +-+-+-+-+ +-+-+-+-+-+-+-+-+ {RESET}
+"""
+
+print(f"{MAGENTA}{'=' * 70}{RESET}")
+print(f"{ascii_banner}")
+print(f"{tagline}")
+print(f"{MAGENTA}{'=' * 70}{RESET}")
+print(f"{GREEN}{BOLD}{UNDERLINE}Telegram: https://t.me/CryptofaceByJusticeTech{RESET}")
+print(f"{RED}{BOLD}{UNDERLINE}YouTube: https://youtube.com/@JusticeTech{RESET}")
+print(f"{MAGENTA}{'=' * 70}{RESET}")
+
+
 # Function to send the /tap request
 def send_tap_request(available_taps, count, token):
     url = 'https://api-gw.geagle.online/tap'
