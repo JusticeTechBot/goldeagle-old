@@ -13,12 +13,15 @@ UNDERLINE = "\033[4m"
 RESET = "\033[0m"
 
 ascii_banner = f"""
-{CYAN}    ______      __        __  ______                 __
-   / ____/___  / /_____  / /_/ ____/______  ______  / /_____
-  / /_  / __ \/ //_/ _ \/ __/ /   / ___/ / / / __ \/ __/ __ \\
- / __/ / /_/ / ,< /  __/ /_/ /___/ /  / /_/ / /_/ / /_/ /_/ /
-/_/    \____/_/|_|\___/\__/\____/_/   \__, / .___/\__/\____/
-                                     /____/_/               {RESET}
+{CYAN}    
+   _____           _           ______                _       
+  / ____|         | |         |  ____|              | |      
+| |     ___  __ | | ___  ___ | |__ ___  _ __   __ _| |_ ___ 
+| |    / _ \/ _` | |/ _ \/ _ \|  __/ _ \| '_ \ / _` | __/ _ \
+| |___|  __/ (_| | |  __/  __/| | | (_) | | | | (_| | ||  __/
+  \_____\___|\__, |_|\___|\___||_|  \___/|_| |_|\__,_|\__\___|
+              __/ |                                          
+             |___/                                                          {RESET}
 """
 
 tagline = f"""
@@ -31,8 +34,8 @@ print(f"{MAGENTA}{'=' * 70}{RESET}")
 print(f"{ascii_banner}")
 print(f"{tagline}")
 print(f"{MAGENTA}{'=' * 70}{RESET}")
-print(f"{GREEN}{BOLD}{UNDERLINE}Telegram: https://t.me/foketcrypto{RESET}")
-print(f"{RED}{BOLD}{UNDERLINE}YouTube: https://youtube.com/@foketcrypto{RESET}")
+print(f"{GREEN}{BOLD}{UNDERLINE}Telegram: https://t.me/CryptofaceByJusticeTech{RESET}")
+print(f"{RED}{BOLD}{UNDERLINE}YouTube: https://youtube.com/@JusticeTech{RESET}")
 print(f"{MAGENTA}{'=' * 70}{RESET}")
 
 def send_request(available_taps, count, token):
