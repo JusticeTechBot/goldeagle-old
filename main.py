@@ -1,19 +1,19 @@
-from pynput.mouse import Button, Controller
+import os
 import time
 
-mouse = Controller()
-
-def auto_tap(interval, duration, energy_cap):
+def auto_tap(x, y, interval, duration, energy_cap):
     """
-    Auto tap (mouse click) at the current mouse position with energy cap.
+    Auto tap (simulate screen taps) at the specified coordinates with an energy cap.
 
     Parameters:
-    interval (float): Time between clicks in seconds.
+    x (int): X-coordinate for the tap.
+    y (int): Y-coordinate for the tap.
+    interval (float): Time between taps in seconds.
     duration (float): Total duration for the auto tapping in seconds.
     energy_cap (int): Maximum number of taps before waiting.
     """
-    print("Starting auto tap... Move your mouse to the target position.")
-    time.sleep(3)  # Give user time to position the mouse
+    print(f"Starting auto tap at ({x}, {y})...")
+    time.sleep(3)  # Give the user time to prepare
     print("Auto tapping in progress. Press Ctrl+C to stop.")
 
     start_time = time.time()
@@ -22,9 +22,10 @@ def auto_tap(interval, duration, energy_cap):
     try:
         while time.time() - start_time < duration:
             if tap_count < energy_cap:
-                mouse.click(Button.left)  # Simulate a left mouse click
+                # Use Termux API to simulate a tap
+                os.system(f"input tap {x} {y}")
                 tap_count += 1
-                time.sleep(interval)  # Wait for the next click
+                time.sleep(interval)  # Wait for the next tap
             else:
                 print("Energy cap reached! Waiting for 2 minutes...")
                 time.sleep(120)  # Wait for 2 minutes
@@ -35,8 +36,10 @@ def auto_tap(interval, duration, energy_cap):
     print("Finished auto tapping.")
 
 # Settings
-tap_interval = 0.5  # Seconds between each click
-tap_duration = 600  # Total duration in seconds (e.g., 10 minutes)
-energy_cap = 1000   # Maximum number of taps before waiting
+tap_x = 500          # X-coordinate for the tap (modify as needed)
+tap_y = 500          # Y-coordinate for the tap (modify as needed)
+tap_interval = 0.5   # Seconds between each tap
+tap_duration = 600   # Total duration in seconds (e.g., 10 minutes)
+energy_cap = 1000    # Maximum number of taps before waiting
 
-auto_tap(tap_interval, tap_duration, energy_cap)
+auto_tap(tap_x, tap_y, tap_interval, tap_duration, energy_cap)
